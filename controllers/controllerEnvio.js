@@ -47,7 +47,9 @@ const controllers={
                         mensajes : messages,
                         proy: proyecto,
                         obj: objetos,
-                        estados: objetos.estadosObj.records},
+                        unidades: objetos.estadosObj.records.map((estado)=>{
+                           return estado.nombre_unidad__c;
+                        })},
                     }
                 }
         }).catch(error =>{
