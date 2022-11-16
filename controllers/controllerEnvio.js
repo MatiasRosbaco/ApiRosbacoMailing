@@ -43,8 +43,13 @@ const controllers={
             respuesta = {
                 meta: {
                     status: 200,
+                    data:{
+                        mensajes : messages,
+                        proy: proyecto,
+                        obj: objetos,
+                        estados: objetos.estadosObj.records},
+                    }
                 }
-            }
         }).catch(error =>{
             console.log(error);
         })
