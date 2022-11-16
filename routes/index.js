@@ -8,6 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/enviarMails',apiController.sendMail);
+router.get('/enviarMails',await apiController.sendMail);
 
 module.exports = router;
