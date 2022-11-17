@@ -1,16 +1,16 @@
 var jsforce = require('jsforce');
 var fs = require('fs');
 var path = require('path');
-let creds = JSON.parse(fs.readFileSync(path.resolve(__dirname, './salesforce-creds.json')).toString());
 const controller = {
     connection: async function(idProyecto){
         const today = new Date();
         let month = today.getMonth() + 1;
             var conn = new jsforce.Connection({
-                loginUrl: creds.url
+                loginUrl: process.env.url
             });
+            console.log(process.env.usernameSF, process.env.password+process.env.securityToken ,process.env.url);
             try {
-                await conn.login(creds.username, creds.password+creds.securityToken);//cambiar a ouath y variable de ambiente
+                await conn.login(process.env.usernameSF, process.env.password+process.env.securityToken );//cambiar a ouath y variable de ambiente
                 console.log('Connected to Salesforce!');
                 //creds.accessToken = conn.accessToken;
                 //creds.instanceUrl = conn.instanceUrl;

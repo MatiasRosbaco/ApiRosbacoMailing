@@ -1,9 +1,9 @@
 const sgMail = require('@sendgrid/mail');
 let fs = require('fs');
 let path = require('path');
-let creds = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../salesforce-creds.json')).toString());
 var jsforce1 = require('../jsforce.js');
-sgMail.setApiKey(creds.sendgridApi);// cambiar a variable de ambiente
+
+sgMail.setApiKey(process.env.SendGridKey);// cambiar a variable de ambiente
 
 
 const controllers={
@@ -47,7 +47,9 @@ const controllers={
                         mensajes : messages,
                         proy: proyecto,
                         obj: objetos,
-                        estados: objetos.estadosObj.records},
+                        unidades: objetos.estadosObj.records.map((estado)=>{
+                           return estado.nombre_unidad__c;
+                        })},
                     }
                 }
         }).catch(error =>{
