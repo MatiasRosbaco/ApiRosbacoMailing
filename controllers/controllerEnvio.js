@@ -47,7 +47,7 @@ const controllers={
                         mensajes : messages,
                         proy: proyecto,
                         obj: objetos,
-                        unidades: objetos.estadosObj.records.map((estado)=>{
+                        unidades: objetos.records.map((estado)=>{
                            return estado.nombre_unidad__c;
                         })},
                     }
