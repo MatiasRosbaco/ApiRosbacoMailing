@@ -16,7 +16,7 @@ const controllers={
         console.log(proyecto);
         console.log(objetos);
         try{
-            const messages = objetos.estadosObj.records.map((estado)=>{
+            const messages = objetos.estadosObj.records.forEach((estado)=>{
                 let saldoPesos;
                 let saldoDolares;
                 if(estado.Saldo_a_cobrar_en_pesos__c == undefined){
@@ -47,7 +47,7 @@ const controllers={
                         mensajes : messages,
                         proy: proyecto,
                         obj: objetos,
-                        unidades: objetos.records.map((estado)=>{
+                        unidades: objetos.estadosObj.records.forEach((estado)=>{
                            return estado.nombre_unidad__c;
                         })},
                     }
