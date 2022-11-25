@@ -8,7 +8,6 @@ const controller = {
             var conn = new jsforce.Connection({
                 loginUrl: process.env.url
             });
-            console.log(process.env.usernameSF, process.env.password+process.env.securityToken ,process.env.url);
             try {
                 await conn.login(process.env.usernameSF, process.env.password+process.env.securityToken );//cambiar a ouath y variable de ambiente
                 console.log('Connected to Salesforce!');
@@ -24,7 +23,7 @@ const controller = {
                 let idUnidades = unidades.records.map((unidad => {
                     return unidad.Id;
                 }));
-                let soqlEstados = "SELECT fecha__c,Nombre_propietario__c,Nombre_unidad__c,Email_propietario_1__c,Email_propietario_2__c,Email_propietario_3__c,Saldo_a_cobrar_en_dolares__c,Saldo_a_cobrar_en_pesos__c FROM estado_de_cuentas__c WHERE unidad__c IN ('" + idUnidades.join("','") + "') " + "AND mes__c = "+month+" LIMIT 200";
+                let soqlEstados = "SELECT fecha__c,Nombre_propietario__c,Nombre_unidad__c,Email_propietario_1__c,Email_propietario_2__c,Email_propietario_3__c,Saldo_a_cobrar_en_dolares__c,Saldo_a_cobrar_en_pesos__c FROM estado_de_cuentas__c WHERE unidad__c IN ('" + idUnidades.join("','") + "') " + "AND mes__c = "+month+" AND Email_enviado__c = false LIMIT 200";
                 var estados = await conn.query(soqlEstados);
                 console.log(estados);
                 await conn.logout();
