@@ -9,5 +9,6 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/enviarMails',apiController.sendMail);
+router.post('/enviarMails',apiController.sendMail);
 
 module.exports = router;
