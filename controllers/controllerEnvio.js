@@ -54,7 +54,7 @@ const controllers={
                     status: 200,
                     data:{
                         estadosID: objetos.estadosObj.records.map((estado)=>{
-                            return estado.id;
+                            return estado.nombre_unidad__c;
                         })},
                     }
                 }
