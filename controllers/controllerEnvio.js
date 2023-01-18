@@ -22,7 +22,7 @@ const controllers={
                 let importeDiferencia;
                 let importeDolares;
                 let saldoDolares;
-                console.log(estado.Importe_diferencia_de_indice__c);
+                console.log(estado.nombre_unidad__c);
                 if(estado.Saldo_a_cobrar_en_pesos__c == undefined){
                     saldoPesos = 0;
                     importeCac = 0;
