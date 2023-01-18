@@ -12,7 +12,7 @@ const controllers={
         console.log(req.query);
         let idProyecto = req.query.idProyecto;
         let objetos = await jsforce1.connection(idProyecto);
-        let proyecto = objetos.proyectoObj.records;
+        let proyecto = objetos.proyectoObj.records[0];
         console.log(proyecto);
         console.log(objetos.estadosObj);
         try{
