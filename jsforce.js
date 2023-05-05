@@ -31,7 +31,7 @@ const controller = {
         return unidad.Id;
       });
       let soqlEstados =
-        "SELECT 	Importe_mas_cac_aid__c,Importe_en_dolares__c,Importe_diferencia_de_indice__c,fecha__c,Nombre_propietario__c,Nombre_unidad__c,Email_propietario_1__c,Email_propietario_2__c,Email_propietario_3__c,Saldo_a_cobrar_en_dolares__c,Saldo_a_cobrar_en_pesos__c, Tipo_de_plan__c, Plan_de_pago_en_pesos__c, Plan_de_pago_en_dolares__c FROM estado_de_cuentas__c WHERE unidad__c IN ('" +
+        "SELECT 	Importe_mas_cac_aid__c,Importe_en_dolares__c,Importe_diferencia_de_indice__c,fecha__c,Nombre_propietario__c,Nombre_unidad__c,Email_propietario_1__c,Email_propietario_2__c,Email_propietario_3__c,Saldo_a_cobrar_en_dolares__c,Saldo_a_cobrar_en_pesos__c, Tipo_de_plan__c, Nombre_Cuota_Pesos__c, Nombre_Cuota_Dolares__c FROM estado_de_cuentas__c WHERE unidad__c IN ('" +
         idUnidades.join("','") +
         "') " +
         "AND mes__c = " +

@@ -71,7 +71,7 @@ const controllers = {
             "1) La suma de $ " +
             saldoPesos +
             " correspondiente a la " +
-            Plan_de_pago_en_pesos__c +
+            estado.Nombre_Cuota_Pesos__c +
             "de su plan de pagos;" +
             " La cuenta habilitada a fin de realizar correctamente su/s pago/s es la siguiente: " +
             "- Razón social:" +
@@ -116,7 +116,7 @@ const controllers = {
             "<br><br>1) La suma de $ " +
             saldoPesos +
             " correspondiente a la " +
-            Plan_de_pago_en_pesos__c +
+            estado.Nombre_Cuota_Pesos__c +
             " de su plan de pagos;" +
             "<br><br>La cuenta habilitada a fin de realizar correctamente su/s pago/s es la siguiente: " +
             "<br>- Razón social:" +
@@ -168,7 +168,7 @@ const controllers = {
             "La Suma de USD " +
             saldoDolares +
             "correspondiente a la " +
-            Plan_de_pago_en_dolares__c +
+            estado.Nombre_Cuota_Dolares__c +
             " de su plan de pagos;" +
             "La cuenta habilitada a fin de realizar correctamente su/s pago/s es la siguiente:" +
             "Datos de la cuenta bancaria:" +
@@ -201,7 +201,7 @@ const controllers = {
             "<br><br>La Suma de USD " +
             saldoDolares +
             "correspondiente a la " +
-            Plan_de_pago_en_dolares__c +
+            estado.Nombre_Cuota_Dolares__c +
             " de su plan de pagos;" +
             "<br>La cuenta habilitada a fin de realizar correctamente su/s pago/s es la siguiente:" +
             "<br><br>Datos de la cuenta bancaria:" +
